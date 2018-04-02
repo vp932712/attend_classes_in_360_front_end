@@ -6,8 +6,8 @@ import {
   Pano,
   asset
 } from 'react-vr';
-import Home from "./Home"
-class Main extends React.Component {
+
+class Home extends React.Component {
 
   state= {
 
@@ -20,10 +20,10 @@ class Main extends React.Component {
   render() {
     return (
       <View>
-      < Home />
+        <Pano source={asset('welcome.jpg')}/>
       </View>
     );
   }
 }
 
-export default Main
+export default Home
