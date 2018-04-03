@@ -3,27 +3,45 @@ import {
   Text,
   View,
   VrButton,
+  Image,
+  asset,
   Pano,
-  asset
+  StyleSheet
 } from 'react-vr';
+
 
 class Home extends React.Component {
 
-  state= {
-
-    currentView: "home"
+  state = {
 
   }
 
+render() {
+  return (
+
+        <View >
+          <Pano source={asset('welcome.jpg')}/>
 
 
-  render() {
-    return (
-      <View>
-        <Pano source={asset('welcome.jpg')}/>
-      </View>
+          </View>
+
+
+
+
+
+
+
+
+
+
+
+
     );
   }
 }
+
+
+
+
 
 export default Home
