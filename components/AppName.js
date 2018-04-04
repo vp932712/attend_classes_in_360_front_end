@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-vr';
 
-class Welcome extends React.Component {
+class AppName extends React.Component {
   render() {
     return (<View style={{
         margin: 0.1,
@@ -19,4 +19,4 @@ class Welcome extends React.Component {
   }
 }
 
-export default Welcome
+export default AppName

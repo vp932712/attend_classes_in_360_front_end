@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View, VrButton, Pano, asset} from 'react-vr';
 import Home from "./Home"
+import Welcome from "./Welcome"
+
 
 class Main extends React.Component {
 
@@ -17,7 +19,7 @@ class Main extends React.Component {
 
   render() {
     return (<View>
-      < Home/>
+      <Welcome />
     </View>
   );
   }

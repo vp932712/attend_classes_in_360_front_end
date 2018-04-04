@@ -16,7 +16,7 @@ class Demo extends React.Component {
         backgroundColor: '#1AC8F7'
       }}>
       <VrButton onClick={() => {
-          this.setState({color: "green"})
+          this.setState({color: "green"})// send props to the parent
         }}>
         <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
           DEMO
