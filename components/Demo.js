@@ -1,23 +1,29 @@
 import React from 'react';
-     import {
-       Text,
-       View,
-       VrButton
-     } from 'react-vr';
+import {Text, View, VrButton} from 'react-vr';
 
+class Demo extends React.Component {
 
-     class Demo extends React.Component {
-       render() {
-         return (
-           <View style={{ margin: 0.1, height: 0.3, backgroundColor: '#1AC8F7'}}>
-             <VrButton>
-               <Text style={{fontSize: 0.2, textAlign: 'center'}}>
-               DEMO
-               </Text>
-             </VrButton>
-           </View>
-         )
-       }
-     }
+  state = {
+    fontSize: 0.2,
+    textAlign: 'center',
+    color: "blue"
+  }
 
-    export default Demo
+  render() {
+    return (<View style={{
+        margin: 0.1,
+        height: 0.3,
+        backgroundColor: '#1AC8F7'
+      }}>
+      <VrButton onClick={() => {
+          this.setState({color: "green"})
+        }}>
+        <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
+          DEMO
+        </Text>
+      </VrButton>
+    </View>)
+  }
+}
+
+export default Demo

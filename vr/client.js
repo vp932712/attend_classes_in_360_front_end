@@ -4,10 +4,16 @@
 
 // Auto-generated content.
 import {VRInstance} from 'react-vr-web';
+import * as SimpleRaycaster from "simple-raycaster";
 
 function init(bundle, parent, options) {
   const vr = new VRInstance(bundle, 'attend_classes_in_360_front_end', parent, {
+
+    raycasters: [
+      SimpleRaycaster // Add SimpleRaycaster to the options
+    ],
     // Add custom options here
+     cursorVisibility: 'visible',
     enableHotReload: true,
     ...options,
   });
