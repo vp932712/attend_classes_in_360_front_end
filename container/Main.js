@@ -3,25 +3,23 @@ import {Text, View, VrButton, Pano, asset} from 'react-vr';
 import Home from "./Home"
 import Welcome from "./Welcome"
 
-
 class Main extends React.Component {
 
   state = {
-
-    currentView: "home"
-
+    currentView: "welcome"
   }
 
-  // updateView = (viewType) => {
-  //   this.setState({currentView: viewType})
-  // } set the views of the back ground
-
+  updateView = (viewType) => {
+    this.setState({currentView: viewType})
+  }
 
   render() {
+    console.log(this.state)
     return (<View>
-      <Welcome />
-    </View>
-  );
+      {this.state.currentView === "welcome"? <Welcome updateView={this.updateView}/> : null}
+      {this.state.currentView === "home"? <Home updateView={this.updateView}/> : null}
+
+    </View>);
   }
 }
 

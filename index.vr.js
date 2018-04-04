@@ -21,7 +21,7 @@ export default class attend_classes_in_360_front_end extends React.Component {
   render() {
     return (
       <View>
-        < Main />
+        <Main />
       </View>
 
     );

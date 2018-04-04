@@ -13,7 +13,7 @@ import Demo from "../components/Demo"
 
 class Welcome extends React.Component {
 
-  state = {}
+
 
   render() {
     return (<View style={{
@@ -32,7 +32,7 @@ class Welcome extends React.Component {
       }}>
       <Pano source={asset("library.jpg")}/>
       <AppName/>
-      <Demo/>
+      <Demo updateView={this.props.updateView}/>
     </View>);
   }
 }
