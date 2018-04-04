@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, VrButton} from 'react-vr';
+import {Text, View, VrButton, Animated} from 'react-vr';
 
 class Exit extends React.Component {
   render() {
@@ -11,15 +11,15 @@ class Exit extends React.Component {
           height: 0.3,
           backgroundColor: '#A482DF',
           borderRadius: 0.1,
-          opacity: this.state.fadeIn,
+          opacity: 2,
           transform: [
             {
-              translateX: this.state.slideRight
+              translateX: 5
             }
           ]
         }}>
 
-        <VrButton onClick={() => this.props.changeScenes(nextScene)}>
+        <VrButton onClick={() => console.log("exit")}>
           <Text style={{
               fontSize: 0.2,
               textAlign: 'center',
@@ -28,7 +28,7 @@ class Exit extends React.Component {
             EXIT
           </Text>
         </VrButton>
-        )}
+
       </Animated.View>
 
     </View>)

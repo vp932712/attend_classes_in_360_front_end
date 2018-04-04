@@ -14,7 +14,9 @@ import Exit from "../components/Exit"
 class Home extends React.Component {
 
   render() {
-    return (<View style={{
+    return (
+      <View>
+      <View style={{
         width: 5,
         flexDirection: 'row',
         alignItems: 'flex-start',
@@ -28,10 +30,11 @@ class Home extends React.Component {
           }
         ]
       }}>
+
       <HomeButtons/>
     </View>
     <View style={{
-        width:,
+        width:5,
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'center',
@@ -45,7 +48,9 @@ class Home extends React.Component {
         ]
       }}>
       <Exit/>
-    </View>);
+    </View>
+     <Pano source={asset("library.jpg")}/>
+  </View>);
   }
 }
 
