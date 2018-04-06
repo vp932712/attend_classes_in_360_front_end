@@ -29,7 +29,9 @@ class HomeButtons extends React.Component {
             backgroundColor: "#CAB9E5",
             borderStyle: "solid"
           }}>
-          <VrButton onClick={() => console.log("home")}>
+          <VrButton onClick={() => {
+              this.props.updateView("home")// send props to the parent
+            } }>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               home
             </Text>
@@ -41,7 +43,9 @@ class HomeButtons extends React.Component {
             backgroundColor: "#CAB9E5",
             borderStyle: "solid"
           }}>
-          <VrButton onClick={() => console.log("lectures")}>
+          <VrButton onClick={() => {
+              this.props.updateView("home")// send props to the parent
+            }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               lectures
             </Text>
@@ -62,7 +66,9 @@ class HomeButtons extends React.Component {
             backgroundColor: "#CAB9E5",
             borderStyle: "solid"
           }}>
-          <VrButton onClick={() => console.log("notes")}>
+          <VrButton onClick={() => {
+              this.props.updateView("notes")// send props to the parent
+            }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               notes
             </Text>
@@ -74,7 +80,9 @@ class HomeButtons extends React.Component {
             backgroundColor: "#CAB9E5",
             borderStyle: "solid"
           }}>
-          <VrButton onClick={() => console.log("videos")}>
+          <VrButton onClick={() => {
+              this.props.updateView("videos")// send props to the parent
+            }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               videos
             </Text>

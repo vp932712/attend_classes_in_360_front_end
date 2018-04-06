@@ -16,8 +16,31 @@ class Main extends React.Component {
   render() {
     console.log(this.state)
     return (<View>
-      {this.state.currentView === "welcome"? <Welcome updateView={this.updateView}/> : null}
-      {this.state.currentView === "home"? <Home updateView={this.updateView}/> : null}
+      {
+        this.state.currentView === "welcome"
+          ? <Welcome updateView={this.updateView}/>
+          : null
+      }
+      {
+        this.state.currentView === "home"
+          ? <Home updateView={this.updateView}/>
+          : null
+      }
+      {
+        this.state.currentView === "recordedLectures"
+          ? <RecordedLectures updateView={this.updateView}/>
+          : null
+      }
+      {
+        this.state.currentView === "notes"
+          ? <Notes updateView={this.updateView}/>
+          : null
+      }
+      {
+        this.state.currentView === "profile"
+          ? <Profile updateView={this.updateView}/>
+          : null
+      }
 
     </View>);
   }

@@ -31,7 +31,7 @@ class Home extends React.Component {
         ]
       }}>
 
-      <HomeButtons/>
+      <HomeButtons updateView={this.props.updateView} />
     </View>
     <View style={{
         width:5,
@@ -47,9 +47,9 @@ class Home extends React.Component {
           }
         ]
       }}>
-      <Exit/>
+      <Exit updateView={this.props.updateView}/>
     </View>
-     <Pano source={asset("library.jpg")}/>
+     <Pano source={asset("starry-sky.jpg")}/>
   </View>);
   }
 }

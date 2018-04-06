@@ -19,7 +19,9 @@ class Exit extends React.Component {
           ]
         }}>
 
-        <VrButton onClick={() => console.log("exit")}>
+        <VrButton onClick={() => {
+            this.props.updateView("welcome")
+          }}>
           <Text style={{
               fontSize: 0.2,
               textAlign: 'center',
