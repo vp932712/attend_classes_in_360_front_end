@@ -28,7 +28,7 @@ class Main extends React.Component {
       }
       {
         this.state.currentView === "recordedLectures"
-          ? <RecordedLectures updateView={this.updateView}/>
+          ? <Lectures updateView={this.updateView}/>
           : null
       }
       {

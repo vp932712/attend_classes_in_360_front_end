@@ -6,20 +6,20 @@ import {
   Pano
 } from 'react-vr';
 
-import RecordedLectures from '../components/RecordedLectures.js';
+import RecordedLectures from './RecordedLectures.js';
 
-
-class Lectures extends React.Component {
+//Scene
+class Dashboard extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('library.jpg')}/>
-        <DashboardLayout
-          updateView={this.props.updateView}
+        <Pano source={asset('dashboard-background.jpg')}/>
+        <RecordedLectures updateView={this.props.updateView}
+
         />
       </View>
     )
   }
 }
 
-export defualt Lectures
+export default Lectures;

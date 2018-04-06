@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Animated
@@ -6,14 +6,14 @@ import {
 
 import { Easing } from 'react-native';
 
-import MenuButtons from './elements/MenuButtons.js';
-import TileButtons from './elements/TileButtons.js';
-import ProgressCircles from './elements/ProgressCircles.js';
+import SideBar from '../components/SideBar.js';
+import Box from '../components/Box.js';
+import Loading from '../components/Loading.js';
 
-import Button from './elements/Button.js';
+import Exit from '../components/Exit.js';
 
 
-class DashboardLayout extends React.Component {
+class RecordedLectures extends Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class DashboardLayout extends React.Component {
       showButton: false,
       color1: "#A482DF",
       color2: "#DBDAF1",
-      text: this.props.text,
+      text: "Select",
       borderWidths: [0, 0, 0, 0, 0, 0],
       selectionIndex: "",
       stage: 1
@@ -81,7 +81,7 @@ class DashboardLayout extends React.Component {
   }
 
   updateScene() {
-    this.props.captureSelection(this.state.stage, this.state.selectionIndex);
+
     this.setState({color1: "#DBDAF1", color2: "#A482DF", text: "Watch Video", stage: 2});
   }
 
@@ -103,15 +103,13 @@ class DashboardLayout extends React.Component {
             marginTop: -0.3
           }}
         >
-          <MenuButtons/>
-          <TileButtons
+          <SideBar/>
+          <Box
             stage={this.state.stage}
-            environments={this.props.environments}
-            previews={this.props.previews}
-            updateStage={this.updateStage.bind(this)}
+            updateStage = {console.log("hello")}
             borderWidths={this.state.borderWidths}
           />
-          <ProgressCircles color1={this.state.color1} color2={this.state.color2}/>
+          <Loading color1={this.state.color1} color2={this.state.color2}/>
         </Animated.View>
 
         <View style={{
@@ -125,12 +123,12 @@ class DashboardLayout extends React.Component {
           marginTop: -0.7
         }}>
         <Button
-          updateScene={this.updateScene.bind(this)}
+
           showButton={this.state.showButton}
           text={this.state.text}
-          changeScenes={this.props.changeScenes}
+
           stage={this.state.stage}
-          scene={this.props.scene}
+
           selectionIndex={this.state.selectionIndex}
         />
         </View>
@@ -139,4 +137,4 @@ class DashboardLayout extends React.Component {
   }
 }
 
-export default RecordedLectures
+export default RecordedLectures;
