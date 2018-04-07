@@ -44,7 +44,7 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateView("home")// send props to the parent
+              this.props.updateView("lectures")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               lectures

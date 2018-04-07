@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, VrButton, Pano, asset} from 'react-vr';
 import Home from "./Home"
 import Welcome from "./Welcome"
+import Lectures from "./Lectures"
 
 class Main extends React.Component {
 
@@ -13,34 +14,32 @@ class Main extends React.Component {
     this.setState({currentView: viewType})
   }
 
+  currentView = () => {
+    switch (this.state.currentView) {
+      case "welcome":
+        return <Welcome updateView={this.updateView}/>
+        break;
+      case "home":
+        return <Home updateView={this.updateView}/>
+
+        break;
+      case "lectures":
+        return <Lectures updateView={this.updateView}/>
+
+        break;
+      case "notes":
+        return <Notes updateView={this.updateView}/>
+
+        break;
+      default:
+        return null;
+    }
+  }
+
   render() {
     console.log(this.state)
     return (<View>
-      {
-        this.state.currentView === "welcome"
-          ? <Welcome updateView={this.updateView}/>
-          : null
-      }
-      {
-        this.state.currentView === "home"
-          ? <Home updateView={this.updateView}/>
-          : null
-      }
-      {
-        this.state.currentView === "recordedLectures"
-          ? <Lectures updateView={this.updateView}/>
-          : null
-      }
-      {
-        this.state.currentView === "notes"
-          ? <Notes updateView={this.updateView}/>
-          : null
-      }
-      {
-        this.state.currentView === "profile"
-          ? <Profile updateView={this.updateView}/>
-          : null
-      }
+      {  this.currentView() }
 
     </View>);
   }
