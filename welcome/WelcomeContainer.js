@@ -14,7 +14,7 @@ class WelcomeContainer extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('library.jpg')}/>
+        <Pano source={asset('welcome.jpg')}/>
         <WelcomeComponent
           updateContainer={this.props.updateContainer}
         />

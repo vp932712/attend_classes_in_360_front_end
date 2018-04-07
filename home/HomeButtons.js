@@ -30,10 +30,10 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateView("home")// send props to the parent
+              this.props.updateContainer("home")// send props to the parent
             } }>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
-              home
+              Home
             </Text>
           </VrButton>
         </View>
@@ -44,10 +44,10 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateView("lectures")// send props to the parent
+              this.props.updateContainer("lectures")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
-              lectures
+              Recorded Lectures
             </Text>
           </VrButton>
         </View>
@@ -67,10 +67,10 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateView("notes")// send props to the parent
+              this.props.updateContainer("notes")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
-              notes
+            Notes
             </Text>
           </VrButton>
         </View>
@@ -81,10 +81,10 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateView("videos")// send props to the parent
+              this.props.updateContainer("videos")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
-              videos
+              Live Lectures
             </Text>
           </VrButton>
         </View>
