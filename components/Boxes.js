@@ -8,7 +8,7 @@ import {
 } from 'react-vr';
 
 
-class Box extends React.Component {
+class Boxes extends React.Component {
 
   render() {
     const stage = this.props.stage;
@@ -232,4 +232,4 @@ class Box extends React.Component {
   }
 }
 
-export default Box;
+export default Boxes;

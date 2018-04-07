@@ -12,7 +12,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // import thunk from 'redux-thunk';
 import { Route, Redirect } from "react-router"
-import Main from "./container/Main"
+import Main from "./Main"
 
 
 export default class attend_classes_in_360_front_end extends React.Component {

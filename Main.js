@@ -24,7 +24,14 @@ class Main extends React.Component {
 
         break;
       case "lectures":
-        return <Lectures updateView={this.updateView}/>
+        return <Lectures updateView={this.updateView}
+              captureSelection={this.captureSelection.bind(this)}
+              previews={this.state.previews}
+              environments={this.state.environments}
+              showButton={false}
+              text={"Select Environment"}
+              changeScenes={this.changeScenes.bind(this)}
+              scene={this.state.scene}/>
 
         break;
       case "notes":

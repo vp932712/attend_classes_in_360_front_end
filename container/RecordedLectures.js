@@ -7,7 +7,7 @@ import {
 import { Easing } from 'react-native';
 
 import SideBar from '../components/SideBar.js';
-import Box from '../components/Box.js';
+import Boxes from '../components/Boxes.js';
 import Loading from '../components/Loading.js';
 
 import Exit from '../components/Exit.js';
@@ -104,9 +104,11 @@ class RecordedLectures extends Component {
           }}
         >
           <SideBar/>
-          <Box
+          <Boxes
             stage={this.state.stage}
             updateStage = {console.log("hello")}
+            environments={this.props.environments}
+             previews={this.props.previews}
             borderWidths={this.state.borderWidths}
           />
           <Loading color1={this.state.color1} color2={this.state.color2}/>

@@ -15,11 +15,14 @@ class Lectures extends React.Component {
     return (
       <View>
         <Pano source={asset('welcome.jpg')}/>
-        <VrButton onClick={() => console.log("hello world")}>
-          <Text >
-          Hello World
-          </Text>
-        </VrButton>
+        <RecordedLectures
+         environments={this.props.environments}
+         captureSelection={this.props.captureSelection}
+         previews={this.props.previews}
+         text={this.props.text}
+         changeScenes={this.props.changeScenes}
+         scene={this.props.scene}
+       />
       </View>
     )
   }
