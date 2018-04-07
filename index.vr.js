@@ -7,11 +7,9 @@ import {
   Text,
   View,
 } from 'react-vr';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-// import thunk from 'redux-thunk';
-import { Route, Redirect } from "react-router"
+// import { Provider } from 'react-redux';
+// import { createStore, applyMiddleware } from 'redux';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 import Main from "./Main"
 
 

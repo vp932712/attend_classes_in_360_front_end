@@ -1,30 +1,30 @@
 import React from 'react';
 import {Text, View, VrButton, Pano, asset} from 'react-vr';
-import Home from "./Home"
-import Welcome from "./Welcome"
-import Lectures from "./Lectures"
+
+import WelcomeContainer from "./welcome/WelcomeContainer"
+
 
 class Main extends React.Component {
 
   state = {
-    currentView: "welcome"
+    currentContainer: "welcome"
   }
 
-  updateView = (viewType) => {
-    this.setState({currentView: viewType})
+  updateContainer = (container) => {
+    this.setState({currentContainer: container})
   }
 
   currentView = () => {
-    switch (this.state.currentView) {
+    switch (this.state.currentContainer) {
       case "welcome":
-        return <Welcome updateView={this.updateView}/>
+        return <WelcomeContainer updateContainer={this.updateContainer}/>
         break;
       case "home":
-        return <Home updateView={this.updateView}/>
+        return <Home updateContainer={this.updateContainer}/>
 
         break;
       case "lectures":
-        return <Lectures updateView={this.updateView}
+        return <Lectures updateContainer={this.updateContainer}
               captureSelection={this.captureSelection.bind(this)}
               previews={this.state.previews}
               environments={this.state.environments}
@@ -35,7 +35,7 @@ class Main extends React.Component {
 
         break;
       case "notes":
-        return <Notes updateView={this.updateView}/>
+        return <Notes updateContainer={this.updateContainer}/>
 
         break;
       default:
