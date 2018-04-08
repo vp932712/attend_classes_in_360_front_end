@@ -3,11 +3,14 @@ import {Text, View, VrButton, Pano, asset} from 'react-vr';
 
 import WelcomeContainer from "./welcome/WelcomeContainer"
 import HomeContainer from "./home/HomeContainer"
+import RecordedLecturesContainer from "./recordedLectures/RecordedLecturesContainer"
 
 class Main extends React.Component {
 
   state = {
-    currentContainer: "welcome"
+    currentContainer: "welcome",
+    lecturesImg:"",
+    lectureList: ["firstVideo.mp4" ]
   }
 
   updateContainer = (container) => {
@@ -23,15 +26,8 @@ class Main extends React.Component {
         return <HomeContainer updateContainer={this.updateContainer}/>
 
         break;
-      case "lectures":
-        return <Lectures updateContainer={this.updateContainer}
-              captureSelection={this.captureSelection.bind(this)}
-              previews={this.state.previews}
-              environments={this.state.environments}
-              showButton={false}
-              text={"Select Environment"}
-              changeScenes={this.changeScenes.bind(this)}
-              scene={this.state.scene}/>
+      case "recordedLectures":
+        return <RecordedLecturesContainer updateContainer={this.updateContainer} lecturesImg={this.state.lectures}/>
 
         break;
       case "notes":
@@ -46,7 +42,7 @@ class Main extends React.Component {
   render() {
     console.log(this.state)
     return (<View>
-      {  this.currentView() }
+      {this.currentView()}
 
     </View>);
   }

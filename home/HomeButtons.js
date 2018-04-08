@@ -44,7 +44,7 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateContainer("lectures")// send props to the parent
+              this.props.updateContainer("recordedLectures")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               Recorded Lectures
@@ -81,7 +81,7 @@ class HomeButtons extends React.Component {
             borderStyle: "solid"
           }}>
           <VrButton onClick={() => {
-              this.props.updateContainer("videos")// send props to the parent
+              this.props.updateContainer("liveLectures")// send props to the parent
             }}>
             <Text style={this.state} onEnter={() => this.setState({color: 'red'})} onExit={() => this.setState({color: 'white'})}>
               Live Lectures

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   View,
   Animated
@@ -6,29 +6,27 @@ import {
 
 import { Easing } from 'react-native';
 
-import SideBar from '../components/SideBar.js';
-import Boxes from '../components/Boxes.js';
-import Loading from '../components/Loading.js';
+import SideBar from './SideBar.js';
+import Boxes from './Boxes.js';
+import Loading from './Loading.js';
 
-import Exit from '../components/Exit.js';
+import PlayButton from './PlayButton.js'; // button
 
 
-class RecordedLectures extends Component {
+class RecordedLecturesComponent extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
+
+  state = {
       slideLeft: new Animated.Value(-1),
       fadeIn: new Animated.Value(0),
-      showButton: false,
+      playButton: false,
       color1: "#A482DF",
       color2: "#DBDAF1",
-      text: "Select",
       borderWidths: [0, 0, 0, 0, 0, 0],
-      selectionIndex: "",
-      stage: 1
+      lectureId: "",
+
     };
-  }
+
 
   componentDidMount() {
     Animated.sequence([
@@ -53,39 +51,39 @@ class RecordedLectures extends Component {
     ]).start();
   }
 
-  updateStage(input) {
-    if(this.state.showButton === false) {
-      this.setState({showButton: true});
+  selectVideo=(id)=>{
+
+    if(this.state.playButton === false) {
+      this.setState({playButton: true});
     }
 
-    switch (input) {
+    switch (id) {
       case 1:
-        this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0], selectionIndex: 1});
+        this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0], lectureId: 0});
         break;
       case 2:
-        this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0], selectionIndex: 2});
+        this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0], lectureId: 1});
         break;
       case 3:
-        this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0], selectionIndex: 3});
+        this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0], lectureId: 2});
         break;
       case 4:
-        this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0], selectionIndex: 4});
+        this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0], lectureId: 3});
         break;
       case 5:
-        this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0], selectionIndex: 5});
+        this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0], lectureId: 4});
         break;
       case 6:
-        this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05], selectionIndex: 6});
+        this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05], lectureId: 5});
         break;
     }
   }
 
-  updateScene() {
-
-    this.setState({color1: "#DBDAF1", color2: "#A482DF", text: "Watch Video", stage: 2});
+  panoPlayer=()=>{
+    this.props.panoPlayer(this.state.lectureId);
   }
-
   render() {
+    console.log(this.state)
     return (
       <View>
         <Animated.View
@@ -103,13 +101,11 @@ class RecordedLectures extends Component {
             marginTop: -0.3
           }}
         >
-          <SideBar/>
+          <SideBar updateContainer={this.props.updateContainer}/>
           <Boxes
-            stage={this.state.stage}
-            updateStage = {console.log("hello")}
-            environments={this.props.environments}
-             previews={this.props.previews}
+            selectVideo={this.selectVideo}
             borderWidths={this.state.borderWidths}
+
           />
           <Loading color1={this.state.color1} color2={this.state.color2}/>
         </Animated.View>
@@ -124,19 +120,11 @@ class RecordedLectures extends Component {
           transform: [{translate: [0, 0, -3]}],
           marginTop: -0.7
         }}>
-        <Button
-
-          showButton={this.state.showButton}
-          text={this.state.text}
-
-          stage={this.state.stage}
-
-          selectionIndex={this.state.selectionIndex}
-        />
+       {this.state.playButton? <PlayButton panoPlayer={this.panoPlayer}/> : null}
         </View>
       </View>
     )
   }
 }
 
-export default RecordedLectures;
+export default RecordedLecturesComponent;
