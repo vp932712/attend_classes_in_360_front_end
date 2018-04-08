@@ -107,7 +107,7 @@ class RecordedLecturesComponent extends React.Component {
             borderWidths={this.state.borderWidths}
 
           />
-          <Loading color1={this.state.color1} color2={this.state.color2}/>
+          
         </Animated.View>
 
         <View style={{
