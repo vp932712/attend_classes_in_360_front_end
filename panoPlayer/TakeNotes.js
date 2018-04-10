@@ -435,16 +435,24 @@ class TakeNotes extends Component {
   }
 
   submitHandler = (e) => {
-
+   // console.log("input Event", e.nativeEvent.inputEvent.eventType, e.nativeEvent.inputEvent )
     let key = ""
-    if (e.nativeEvent.inputEvent.eventType === "keypress") {
+    if (e.nativeEvent.inputEvent.eventType === "keydown") {
       key = e.nativeEvent.inputEvent.key
 
       if (key === "Enter") {
         this.setState({
           inputText: this.state.inputText + "\n"
         })
-      } else {
+      } else if (key ==="Backspace") {
+        console.log("input text", this.state.inputText)
+         console.log("sliced", this.state.inputText.slice(0,-1))
+
+        this.setState({
+          inputText: this.state.inputText.slice(0,-1)
+
+        })
+      }else {
         this.setState({
           inputText: this.state.inputText + key
         })
