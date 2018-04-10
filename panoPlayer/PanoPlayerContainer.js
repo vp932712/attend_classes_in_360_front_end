@@ -8,22 +8,16 @@ import {
   VideoControl
 } from 'react-vr';
 
-
-
+import TakeNotes from "./TakeNotes"
 
 class PanoPlayerContainer extends React.Component {
 
-
-
   render() {
-    return (
-      <View>
-        <VideoPano source={asset("firstVideo.mp4")}/>
-        
-      </View>
-    )
+    return (<View>
+      <VideoPano source={asset("firstVideo.mp4")}/>
+      <TakeNotes/>
+    </View>)
   }
 }
-
 
 export default PanoPlayerContainer;
