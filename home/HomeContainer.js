@@ -8,34 +8,57 @@ import {
   Pano,
   StyleSheet
 } from 'react-vr';
-import HomeButtons from "./HomeButtons"
-import Exit from "./Exit"
+// import HomeButtons from "./HomeButtons"
+
 
 class Home extends React.Component {
 
   render() {
     return (
+
+      <View>
+      <Pano source={asset("starry-sky.jpg")}/>
       <View style={{
-        width: 5,
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        layoutOrigin: [
-          0.5, 0.5
-        ],
-        transform: [
-          {
-            translate: [0, 0, -3]
-          }
-        ]
+        flex: 1,
+        flexDirection: 'column',
+        width: 2,
+        alignItems: 'stretch',
+        transform: [{translate: [-1, 1, -5]}],
       }}>
 
-      <HomeButtons updateContainer={this.props.updateContainer} />
-      <Exit updateContainer={this.props.updateContainer}/>
-    
+      <View style={{ margin: 0.1, height: 0.3, backgroundColor: 'green'}}>
+      <VrButton onClick={() => {this.props.updateContainer("home") }}>
+        <Text style={{fontSize: 0.2, textAlign: 'center'}}>Home</Text>
+         </VrButton>
+      </View>
+      <View style={{ margin: 0.1, height: 0.3, backgroundColor: 'green'}}>
+      <VrButton onClick={() => {this.props.updateContainer("recordedLectures") }}>
+        <Text style={{fontSize: 0.2, textAlign: 'center'}}>Recorded Lectures</Text>
+        </VrButton>
+      </View>
+      <View style={{ margin: 0.1, height: 0.3, backgroundColor: 'green'}}>
+      <VrButton onClick={() => {this.props.updateContainer("notes") }}>
+        <Text style={{fontSize: 0.2, textAlign: 'center'}}>Notes</Text>
+         </VrButton>
+      </View>
+      <View style={{ margin: 0.1, height: 0.3, backgroundColor: 'green'}}>
+      <VrButton onClick={() => {this.props.updateContainer("liveLectures") }}>
+        <Text style={{fontSize: 0.2, textAlign: 'center'}}>Live Lectures</Text>
+         </VrButton>
+      </View>
+      <View style={{ margin: 0.1, height: 0.3, backgroundColor: 'green'}}>
+      <VrButton onClick={() => {this.props.updateContainer("welcome") }}>
+        <Text style={{fontSize: 0.2, textAlign: 'center'}}>Exit</Text>
+         </VrButton>
+      </View>
 
-     <Pano source={asset("starry-sky.jpg")}/>
-  </View>);
+     </View>
+     </View>
+
+)
+
+
+
   }
 }
 

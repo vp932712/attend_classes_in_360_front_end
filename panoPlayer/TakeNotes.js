@@ -9,21 +9,21 @@ class TakeNotes extends Component {
       end: this.props.rows - 1,
       displayArray: ['|'],
       text: '',
-      rows: this.props.rows || 4,
-      columns: this.props.cols || 50,
-      submitHandler: this.props.onSubmit || null,
+      rows:  4,
+      columns:  50,
+      submitHandler:  null,
       showScroll: false,
       toggleCursor: true,
-      x: this.props.x || -1,
-      y: this.props.y || 0.2,
-      z: this.props.z || -1.5,
+      x:  -1,
+      y:  0.2,
+      z:  -1.5,
       pages: 0,
       focus: false,
       counter: 0,
       opacity: 0,
       textColor: this.props.textColor || 'white',
       backgroundColor: this.props.backgroundColor || 'grey',
-      inputText: "helloWorld"
+      inputText: "Take Notes in here delete this line."
     }
   }
 
