@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, VrButton, Image, asset} from 'react-vr';
 
-class Boxes extends React.Component {
+class EachNotes extends React.Component {
 
   render() {
 
@@ -136,4 +136,4 @@ class Boxes extends React.Component {
   }
 }
 
-export default Boxes;
+export default EachNotes;

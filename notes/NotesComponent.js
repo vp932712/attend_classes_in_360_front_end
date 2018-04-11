@@ -5,12 +5,13 @@ import {
 } from 'react-vr';
 
 import { Easing } from 'react-native';
+
 import SideBar from './SideBar.js';
-import Boxes from './Boxes.js';
-import PlayButton from './PlayButton.js'; // button
+import EachNotes from './EachNotes.js';
+import NextButton from './NextButton.js';
 
 
-class RecordedLecturesComponent extends React.Component {
+class NotesComponent extends React.Component {
 
 
   state = {
@@ -20,7 +21,7 @@ class RecordedLecturesComponent extends React.Component {
       color1: "#A482DF",
       color2: "#DBDAF1",
       borderWidths: [0, 0, 0, 0, 0, 0],
-      selectedLecture: "",
+      lectureId: "",
 
     };
 
@@ -48,7 +49,7 @@ class RecordedLecturesComponent extends React.Component {
     ]).start();
   }
 
-  selectVideo=(id)=>{
+  selectNotes=(id)=>{
 
     if(this.state.playButton === false) {
       this.setState({playButton: true});
@@ -56,28 +57,28 @@ class RecordedLecturesComponent extends React.Component {
 
     switch (id) {
       case 1:
-        this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0], lectureId: 0, selectedLecture: "Video1.mp4"});
+        this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0], lectureId: 0});
         break;
       case 2:
-        this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0], lectureId: 1, selectedLecture: "Video2.mp4"});
+        this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0], lectureId: 1});
         break;
       case 3:
-        this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0], lectureId: 2, selectedLecture: "Video3.mp4"});
+        this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0], lectureId: 2});
         break;
       case 4:
-        this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0], lectureId: 3, selectedLecture: "Video4.mp4"});
+        this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0], lectureId: 3});
         break;
       case 5:
-        this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0], lectureId: 4, selectedLecture: "Video5.mp4"});
+        this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0], lectureId: 4});
         break;
       case 6:
-        this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05], lectureId: 5, selectedLecture: "Video6.mp4"});
+        this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05], lectureId: 5});
         break;
     }
   }
 
   panoPlayer=()=>{
-    this.props.panoPlayer(this.state.selectedLecture);
+    this.props.panoPlayer(this.state.lectureId);
   }
   render() {
     console.log(this.state)
@@ -99,7 +100,7 @@ class RecordedLecturesComponent extends React.Component {
           }}
         >
           <SideBar updateContainer={this.props.updateContainer}/>
-          <Boxes
+          <EachNotes
             selectVideo={this.selectVideo}
             borderWidths={this.state.borderWidths}
 
@@ -124,4 +125,4 @@ class RecordedLecturesComponent extends React.Component {
   }
 }
 
-export default RecordedLecturesComponent;
+export default NotesComponent;

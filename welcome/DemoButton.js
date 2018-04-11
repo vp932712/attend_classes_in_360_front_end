@@ -1,20 +1,16 @@
 import React from 'react';
 import {Text, View, VrButton} from 'react-vr';
 
+
+import buttonStyle from "../Styles/ButtonStyle"
+
 class DemoButton extends React.Component {
 
   render() {
 
     return (<View>
 
-      <View style={{
-          margin: 0.1,
-          paddingLeft: 0.2,
-          paddingRight: 0.2,
-          height: 0.3,
-          backgroundColor: '#A482DF',
-          borderRadius: 0.1
-        }}>
+      <View style={buttonStyle}>
 
         <VrButton onClick={() => this.props.updateContainer("home")}>
           <Text style={{
@@ -25,7 +21,7 @@ class DemoButton extends React.Component {
             Demo
           </Text>
         </VrButton>
-        
+
       </View>
 
     </View>

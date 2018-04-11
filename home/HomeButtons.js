@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, View, VrButton, Image, asset} from 'react-vr';
+import buttonStyle from "../Styles/ButtonStyle"
 
 class HomeButtons extends React.Component {
   state = {
@@ -23,12 +24,7 @@ class HomeButtons extends React.Component {
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-        <View style={{
-            margin: 0.1,
-            height: 0.6,
-            backgroundColor: "#CAB9E5",
-            borderStyle: "solid"
-          }}>
+        <View style={buttonStyle}>
           <VrButton onClick={() => {
               this.props.updateContainer("home")// send props to the parent
             } }>
@@ -37,12 +33,7 @@ class HomeButtons extends React.Component {
             </Text>
           </VrButton>
         </View>
-        <View style={{
-            margin: 0.1,
-            height: 0.6,
-            backgroundColor: "#CAB9E5",
-            borderStyle: "solid"
-          }}>
+        <View style={buttonStyle}>
           <VrButton onClick={() => {
               this.props.updateContainer("recordedLectures")// send props to the parent
             }}>
@@ -60,12 +51,7 @@ class HomeButtons extends React.Component {
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-        <View style={{
-            margin: 0.1,
-            height: 0.6,
-            backgroundColor: "#CAB9E5",
-            borderStyle: "solid"
-          }}>
+        <View style={buttonStyle}>
           <VrButton onClick={() => {
               this.props.updateContainer("notes")// send props to the parent
             }}>
@@ -74,12 +60,7 @@ class HomeButtons extends React.Component {
             </Text>
           </VrButton>
         </View>
-        <View style={{
-            margin: 0.1,
-            height: 0.6,
-            backgroundColor: "#CAB9E5",
-            borderStyle: "solid"
-          }}>
+        <View style={buttonStyle}>
           <VrButton onClick={() => {
               this.props.updateContainer("liveLectures")// send props to the parent
             }}>

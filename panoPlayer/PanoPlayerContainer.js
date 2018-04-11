@@ -12,9 +12,12 @@ import TakeNotes from "./TakeNotes"
 
 class PanoPlayerContainer extends React.Component {
 
+
+
+
   render() {
     return (<View>
-      <VideoPano source={asset("firstVideo.mp4")}/>
+      <VideoPano source={asset(this.props.video)}/>
       <TakeNotes/>
     </View>)
   }

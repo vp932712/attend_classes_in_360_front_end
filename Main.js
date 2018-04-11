@@ -10,7 +10,7 @@ class Main extends React.Component {
   state = {
     currentContainer: "welcome",
     lecturesImg:"",
-    lectureList: ["firstVideo.mp4" ],
+
     currentVideo: ""
   }
 
@@ -18,10 +18,10 @@ class Main extends React.Component {
     this.setState({currentContainer: container})
   }
 
-  viewPanoPlayer=(id)=>{
+  viewPanoPlayer=(video)=>{
     this.setState({
       currentContainer: "panoPlayer",
-      currentVideo: id
+      currentVideo: video
     })
   }
 
