@@ -8,7 +8,7 @@ import {
   Pano,
   StyleSheet
 } from 'react-vr';
-// import HomeButtons from "./HomeButtons"
+
 
 
 class Home extends React.Component {
@@ -17,7 +17,7 @@ class Home extends React.Component {
     return (
 
       <View>
-      <Pano source={asset("starry-sky.jpg")}/>
+      <Pano source={asset("HighRes2.jpg")}/>
       <View style={{
         flex: 1,
         flexDirection: 'column',

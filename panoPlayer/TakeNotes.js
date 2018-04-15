@@ -60,7 +60,16 @@ class TakeNotes extends Component {
   }
 
   handleSubmit = () => {
-    console.log("hello")
+    options={
+      method:"post",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ "text_field": this.state.inputText,
+        "student_id": 1,
+        "lecture_id": 1})
+    }
+    fetch("http://localhost:3000/notes", options)
   }
 
   render() {

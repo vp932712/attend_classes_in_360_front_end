@@ -9,6 +9,7 @@ import {
 } from 'react-vr';
 
 import TakeNotes from "./TakeNotes"
+import ExitButton from "./ExitButton"
 
 class PanoPlayerContainer extends React.Component {
 
@@ -19,6 +20,7 @@ class PanoPlayerContainer extends React.Component {
     return (<View>
       <VideoPano source={asset(this.props.video)}/>
       <TakeNotes/>
+      <ExitButton updateContainer={this.props.updateContainer} />
     </View>)
   }
 }

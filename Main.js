@@ -5,6 +5,7 @@ import WelcomeContainer from "./welcome/WelcomeContainer"
 import HomeContainer from "./home/HomeContainer"
 import RecordedLecturesContainer from "./recordedLectures/RecordedLecturesContainer"
 import PanoPlayerContainer from "./panoPlayer/PanoPlayerContainer"
+import LiveLectureContainer from "./liveLecture/LiveLectureContainer"
 class Main extends React.Component {
 
   state = {
@@ -49,6 +50,9 @@ class Main extends React.Component {
           updateContainer={this.updateContainer}/>
 
           break;
+          case "liveLectures":
+            return <LiveLectureContainer updateContainer={this.updateContainer}/>
+            break;
       default:
         return null;
     }
